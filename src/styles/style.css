@@ -17,7 +17,7 @@ body {
   background-color: #131518;
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 376px) {
   .wrapper,
   .thank-you {
     width: 412px;
