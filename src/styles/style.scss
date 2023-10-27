@@ -76,6 +76,14 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+      &:hover {
+        background-color: $orange;
+        transition: 0.2s ease;
+        .label {
+          color: $white;
+          transition: 0.2s ease;
+        }
+      }
 
       .label {
         color: $medium-grey;
@@ -93,25 +101,15 @@ body {
         border-radius: 50%;
         position: absolute;
         cursor: pointer;
-        z-index: 1;
-        appearance: none;
-        &:checked {
-          background-color: $medium-grey;
-          transition: 0.2s ease;
-        }
-        &:checked + .label {
-          color: $white;
-          transition: 0.2s ease;
-        }
 
-        &:hover {
-          background-color: $orange;
-          transition: 0.2s ease;
-        }
-        &:hover + .label {
-          color: $white;
-          transition: 0.2s ease;
-        }
+        appearance: none;
+      }
+    }
+
+    .input-container-clicked {
+      background-color: $medium-grey;
+      .label {
+        color: $white;
       }
     }
 

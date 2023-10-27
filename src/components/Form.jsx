@@ -1,74 +1,42 @@
-export function Form({ setIsSubmit, setRating }) {
-  function handleClick(e) {
+import { FORMDATA } from "./formData";
+import { useState, useEffect } from "react";
+
+export function Form({ setIsSubmit, setRating, rating }) {
+  const [data] = useState(FORMDATA);
+  const [radioClicked, setRadioClicked] = useState(null);
+
+  function handleSubmitClick(e) {
     e.preventDefault();
     setIsSubmit(true);
   }
+
   return (
     <form className="form">
       <div className="radio-wrapper">
-        <div className="input-container">
-          <input
-            type="radio"
-            id="1"
-            value="1"
-            name="rate"
-            onChange={(e) => setRating(e.target.value)}
-          />
-          <label className="label" htmlFor="one">
-            1
-          </label>
-        </div>
-        <div className="input-container">
-          <input
-            type="radio"
-            id="2"
-            value="2"
-            name="rate"
-            onChange={(e) => setRating(e.target.value)}
-          />
-          <label className="label" htmlFor="two">
-            2
-          </label>
-        </div>
-        <div className="input-container">
-          <input
-            type="radio"
-            id="3"
-            value="3"
-            name="rate"
-            onChange={(e) => setRating(e.target.value)}
-          />
-          <label className="label" htmlFor="three">
-            3
-          </label>
-        </div>
-        <div className="input-container">
-          <input
-            type="radio"
-            id="4"
-            value="4"
-            name="rate"
-            onChange={(e) => setRating(e.target.value)}
-          />
-          <label className="label" htmlFor="four">
-            4
-          </label>
-        </div>
-        <div className="input-container">
-          <input
-            type="radio"
-            id="5"
-            value="5"
-            name="rate"
-            defaultChecked
-            onChange={(e) => setRating(e.target.value)}
-          />
-          <label className="label" htmlFor="five">
-            5
-          </label>
-        </div>
+        {data.map((d, i) => (
+          <div
+            className={
+              radioClicked === i
+                ? "input-container input-container-clicked"
+                : "input-container"
+            }
+            key={d.id}
+            onClick={() => setRadioClicked(i)}
+          >
+            <input
+              type={d.type}
+              id={d.id}
+              value={d.value}
+              name={d.name}
+              onChange={() => setRating(d.value)}
+            />
+            <label className="label" htmlFor={d.value}>
+              {d.value}
+            </label>
+          </div>
+        ))}
       </div>
-      <input type="submit" onClick={handleClick} />
+      <input type="submit" onClick={handleSubmitClick} />
     </form>
   );
 }

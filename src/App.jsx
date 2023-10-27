@@ -14,7 +14,11 @@ function App() {
       ) : (
         <div className="wrapper">
           <Description />
-          <Form setIsSubmit={setIsSubmit} setRating={setRating} />
+          <Form
+            setIsSubmit={setIsSubmit}
+            setRating={setRating}
+            rating={rating}
+          />
         </div>
       )}
     </>
