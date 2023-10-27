@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+@import "variables";
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  cursor: default;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: $background;
+}
+
+@media only screen and (max-width: 1440px) {
+  .wrapper,
+  .thank-you {
+    width: 412px;
+    height: 416px;
+    margin: auto;
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    background: radial-gradient(
+      98.96% 98.96% at 50% 0%,
+      #232a34 0%,
+      #181e27 100%
+    );
+
+    border-radius: 2rem;
+  }
+
+  .description {
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $dark-blue;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+    }
+    h1 {
+      font-size: 1.75rem;
+      color: $white;
+      margin-top: 1.875rem;
+    }
+    p {
+      font-size: 0.9375rem;
+      color: $light-grey;
+      line-height: 1.5rem;
+      margin-top: 0.4375rem;
+    }
+  }
+
+  .form {
+    margin-top: 1.5rem;
+    .radio-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .input-container {
+      width: 51px;
+      height: 51px;
+      background-color: $dark-blue;
+      position: relative;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .label {
+        color: $medium-grey;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        letter-spacing: 0.2px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+      }
+      input[type="radio"] {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+        z-index: 1;
+        appearance: none;
+        &:checked {
+          background-color: $medium-grey;
+          transition: 0.2s ease;
+        }
+        &:checked + .label {
+          color: $white;
+          transition: 0.2s ease;
+        }
+
+        &:hover {
+          background-color: $orange;
+          transition: 0.2s ease;
+        }
+        &:hover + .label {
+          color: $white;
+          transition: 0.2s ease;
+        }
+      }
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      margin-top: 2rem;
+      background-color: $orange;
+      color: $white;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      padding: 0.8675rem 0;
+      border-radius: 1.41rem;
+      &:hover {
+        background-color: $white;
+        color: $orange;
+        transition: 0.2s ease;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .thank-you {
+    padding: 2.8125rem 2.5rem 2.8125rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .rating-p {
+      margin-top: 2rem;
+      color: $orange;
+      background-color: $dark-blue;
+      padding: 0.25rem 1.25rem;
+      border-radius: 22.5px;
+      font-size: 0.9375rem;
+      line-height: 1.5rem;
+    }
+    h2 {
+      margin-top: 2.25rem;
+      color: $white;
+      font-size: 1.75rem;
+    }
+
+    .thank-you-p {
+      margin-top: 0.4375rem;
+      color: $light-grey;
+      font-size: 0.9375rem;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .wrapper,
+  .thank-you {
+    width: 327px;
+    height: 360px;
+    padding: 1.5rem;
+  }
+
+  .description {
+    h1 {
+      font-size: 1.5rem;
+
+      margin-top: 1rem;
+    }
+    p {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      margin-top: 0.625rem;
+    }
+  }
+
+  .form {
+    .input-container {
+      width: 42px;
+      height: 42px;
+
+      .label {
+        font-size: 0.875rem;
+        letter-spacing: 0.175px;
+      }
+    }
+  }
+
+  .thank-you {
+    padding: 2.125rem 1.5rem 2.3125rem 1.5rem;
+    img {
+      width: 9rem;
+    }
+    .rating-p {
+      margin-top: 1.8125rem;
+      padding: 0.3125rem 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .thank-you-p {
+      margin-top: 0.625rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+}

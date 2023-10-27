@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  cursor: default;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: #131518;
+}
+
+@media only screen and (max-width: 1440px) {
+  .wrapper,
+  .thank-you {
+    width: 412px;
+    height: 416px;
+    margin: auto;
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    background: radial-gradient(98.96% 98.96% at 50% 0%, #232a34 0%, #181e27 100%);
+    border-radius: 2rem;
+  }
+  .description .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(213, 19%, 18%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+  .description h1 {
+    font-size: 1.75rem;
+    color: hsl(0, 0%, 100%);
+    margin-top: 1.875rem;
+  }
+  .description p {
+    font-size: 0.9375rem;
+    color: hsl(217, 12%, 63%);
+    line-height: 1.5rem;
+    margin-top: 0.4375rem;
+  }
+  .form {
+    margin-top: 1.5rem;
+  }
+  .form .radio-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .form .input-container {
+    width: 51px;
+    height: 51px;
+    background-color: hsl(213, 19%, 18%);
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form .input-container .label {
+    color: hsl(216, 12%, 54%);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.2px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .form .input-container input[type=radio] {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  .form .input-container input[type=radio]:checked {
+    background-color: hsl(216, 12%, 54%);
+    transition: 0.2s ease;
+  }
+  .form .input-container input[type=radio]:checked + .label {
+    color: hsl(0, 0%, 100%);
+    transition: 0.2s ease;
+  }
+  .form .input-container input[type=radio]:hover {
+    background-color: hsl(25, 97%, 53%);
+    transition: 0.2s ease;
+  }
+  .form .input-container input[type=radio]:hover + .label {
+    color: hsl(0, 0%, 100%);
+    transition: 0.2s ease;
+  }
+  .form input[type=submit] {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.8675rem 0;
+    border-radius: 1.41rem;
+  }
+  .form input[type=submit]:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(25, 97%, 53%);
+    transition: 0.2s ease;
+    cursor: pointer;
+  }
+  .thank-you {
+    padding: 2.8125rem 2.5rem 2.8125rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .thank-you .rating-p {
+    margin-top: 2rem;
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(213, 19%, 18%);
+    padding: 0.25rem 1.25rem;
+    border-radius: 22.5px;
+    font-size: 0.9375rem;
+    line-height: 1.5rem;
+  }
+  .thank-you h2 {
+    margin-top: 2.25rem;
+    color: hsl(0, 0%, 100%);
+    font-size: 1.75rem;
+  }
+  .thank-you .thank-you-p {
+    margin-top: 0.4375rem;
+    color: hsl(217, 12%, 63%);
+    font-size: 0.9375rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .wrapper,
+  .thank-you {
+    width: 327px;
+    height: 360px;
+    padding: 1.5rem;
+  }
+  .description h1 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .description p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    margin-top: 0.625rem;
+  }
+  .form .input-container {
+    width: 42px;
+    height: 42px;
+  }
+  .form .input-container .label {
+    font-size: 0.875rem;
+    letter-spacing: 0.175px;
+  }
+  .thank-you {
+    padding: 2.125rem 1.5rem 2.3125rem 1.5rem;
+  }
+  .thank-you img {
+    width: 9rem;
+  }
+  .thank-you .rating-p {
+    margin-top: 1.8125rem;
+    padding: 0.3125rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .thank-you h2 {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .thank-you .thank-you-p {
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}/*# sourceMappingURL=style.css.map */
