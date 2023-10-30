@@ -1,7 +1,7 @@
 import { FORMDATA } from "./formData";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export function Form({ setIsSubmit, setRating, rating }) {
+export function Form({ setIsSubmit, setRating }) {
   const [data] = useState(FORMDATA);
   const [radioClicked, setRadioClicked] = useState(null);
 
